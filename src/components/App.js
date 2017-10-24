@@ -15,11 +15,15 @@ class App extends Component {
     }
   }
 
+  articleActions = {
+    lookUpAuthor: authorId => this.state.authors[authorId]
+  }
+
   render() {
     return (
       <ArticleList
         articles={this.state.articles}
-        authors={this.state.authors}
+        articleActions={this.articleActions}
       />
     )
   }

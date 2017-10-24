@@ -3,7 +3,8 @@ import React from 'react'
 const convertToDate = dateString => new Date(dateString).toDateString()
 
 const Article = props => {
-  const { article, author } = props
+  const { article, actions } = props
+  const author = actions.lookUpAuthor(article.authorId)
 
   return (
     <div style={styles.article}>
@@ -18,6 +19,9 @@ const Article = props => {
     </div>
   )
 }
+
+export default Article
+
 
 const styles = {
   article: {
@@ -42,5 +46,3 @@ const styles = {
     paddingLeft: 20,
   }
 }
-
-export default Article

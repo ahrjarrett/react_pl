@@ -2,4 +2,4 @@
 - spin up server with `yarn dev`
 - run jest tests with `yarn test`
 
-bm 7
+bm 03/03

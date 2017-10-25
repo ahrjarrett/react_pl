@@ -6,7 +6,7 @@
   "author": "Andrew Jarrett <ahrjarrett@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "pm2 start src/server.js --watch --interpreter babel-node",
+    "dev": "NODE_PATH=./src pm2 start src/server.js --watch --interpreter babel-node",
     "webpack": "webpack -wd",
     "test": "jest --watch"
   },

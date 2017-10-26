@@ -3,8 +3,8 @@ import React from 'react'
 const convertToDate = dateString => new Date(dateString).toDateString()
 
 const Article = props => {
-  const { article, actions } = props
-  const author = actions.lookUpAuthor(article.authorId)
+  const { article, store } = props
+  const author = store.lookUpAuthor(article.authorId)
 
   return (
     <div style={styles.article}>

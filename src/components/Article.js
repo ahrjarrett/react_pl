@@ -3,9 +3,12 @@ import PropTypes from 'prop-types'
 
 const convertToDate = dateString => new Date(dateString).toDateString()
 
-const Article = props => {
-  const { article, store } = props
-  const author = store.lookUpAuthor(article.authorId)
+// a functional component can access the context object
+// by adding it as the second argument here
+const Article = (props, context) => {
+  const { article } = props
+  console.log(context)
+  const author = context.store.lookUpAuthor(article.authorId)
 
   return (
     <div style={styles.article}>
@@ -27,6 +30,13 @@ Article.propTypes = {
     date: PropTypes.string.isRequired,
     body: PropTypes.string.isRequired,
   })
+}
+
+// by defining the contextTypes property on component,
+// we're saying that this component has access to the
+// context object (obv the store, in this case)
+Article.contextTypes = {
+  store: PropTypes.object,
 }
 
 export default Article

@@ -1,7 +1,11 @@
 import React from 'react'
 import ArticleList from '../ArticleList'
+import Article from '../Article'
 
-import renderer from 'react-test-renderer'
+//import renderer from 'react-test-renderer'
+import { configure, shallow } from 'enzyme'
+import Adapter from 'enzyme-adapter-react-16'
+configure({ adapter: new Adapter() })
 
 describe('ArticleList', () => {
 
@@ -10,21 +14,22 @@ describe('ArticleList', () => {
       a: { id: 'a' },
       b: { id: 'b' },
     },
-    store: {
-      lookUpAuthor: jest.fn(() => ({})),
-    },
   }
 
+  Article.proptypes = {}
+
   it('renders correctly', () => {
-    const tree = renderer.create(
+    const wrapper = shallow(
       <ArticleList
         {...testProps}
       />
-    ).toJSON()
+    )
 
-    expect(tree.children.length).toBe(2)
+    expect(wrapper.find('Article').length).toBe(2)
+    // Same thing as:
+    //expect(wrapper.getElement().props.children.length).toBe(2)
 
-    expect(tree).toMatchSnapshot()
+    expect(wrapper).toMatchSnapshot()
   })
 
 })

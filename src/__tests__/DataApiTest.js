@@ -1,4 +1,4 @@
-import StateApi from '../DataApi'
+import StateApi from '../state-api'
 import { data } from '../testData'
 
 const store = new StateApi(data)

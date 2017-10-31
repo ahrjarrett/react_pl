@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOMServer from 'react-dom/server'
 import axios from 'axios'
-import StateApi from 'DataApi'
+import StateApi from 'state-api'
 import App from 'components/App'
 import { host, port } from 'config'
 

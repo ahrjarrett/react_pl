@@ -11,7 +11,6 @@ const ArticleList = props => {
           article={article}
           store={props.store}
         />
-
       )}
     </div>
   )

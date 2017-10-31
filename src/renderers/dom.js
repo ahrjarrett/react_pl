@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 
-import StateApi from 'DataApi'
+import StateApi from 'state-api'
 import App from 'components/App'
 
 const store = new StateApi(window.initialData)

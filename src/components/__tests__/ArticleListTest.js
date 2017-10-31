@@ -1,8 +1,9 @@
 import React from 'react'
 import ArticleList from '../ArticleList'
-import Article from '../Article'
 
+// OLD:
 //import renderer from 'react-test-renderer'
+
 import { configure, shallow } from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
 configure({ adapter: new Adapter() })
@@ -16,8 +17,6 @@ describe('ArticleList', () => {
     },
   }
 
-  Article.proptypes = {}
-
   it('renders correctly', () => {
     const wrapper = shallow(
       <ArticleList
@@ -25,7 +24,7 @@ describe('ArticleList', () => {
       />
     )
 
-    expect(wrapper.find('Article').length).toBe(2)
+    expect(wrapper.find('ArticleContainer').length).toBe(2)
     // Same thing as:
     //expect(wrapper.getElement().props.children.length).toBe(2)
 
